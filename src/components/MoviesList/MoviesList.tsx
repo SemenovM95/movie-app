@@ -82,8 +82,11 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
     const {
       state: { rated },
     } = this
-    const found = rated.find((movie) => movie.id === movieId)
-    return found ? found.userRating : undefined
+    if (rated?.length) {
+      const found = rated.find((movie) => movie.id === movieId)
+      return found ? found.userRating : undefined
+    }
+    return null
   }
 
   setPage = (page: number) => {
@@ -114,8 +117,8 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
       getUserRating,
       state: { movies, rated, currPage, totalResults, activeTab },
     } = this
-    const data = activeTab === 'search' ? movies : rated.slice((currPage - 1) * 10, currPage * 10)
-    const totalItems = activeTab === 'search' ? totalResults : rated.length
+    const data = activeTab === 'search' ? movies : rated?.slice((currPage - 1) * 10, currPage * 10)
+    const totalItems = activeTab === 'search' ? totalResults : rated?.length
     return (
       <>
         <ul className={style.moviesList}>
