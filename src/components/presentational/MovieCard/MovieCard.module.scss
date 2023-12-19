@@ -1,0 +1,51 @@
+.movie-card {
+  position: relative;
+  font-family: Inter, sans-serif;
+  display: flex;
+  width: 450px;
+  height: 280px;
+  box-shadow: 0 4px 12px 0 rgba(107, 107, 107, 0.15);
+  &__image {
+    max-width: 183px;
+  }
+  &__details {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    text-align: left;
+    row-gap: 7px;
+    &-heading {
+      color: #000;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 28px;
+      max-width: 215px;
+    }
+    &-release-date {
+      color: #827E7E;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 22px;
+    }
+    &-genres {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-description {
+      overflow: hidden;
+      color: #000;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      word-wrap: break-word;
+    }
+    &-overall-rating {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

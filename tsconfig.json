@@ -25,8 +25,7 @@
       "src/*": ["src/*"],
       "public/*": ["src/public/*"],
       "components/*": ["src/components/*"],
-      "views/*": ["src/views/*"],
-      "stores/*": ["src/stores/*"]
+      "views/*": ["src/views/*"]
     }
   },
   "include": ["src"],

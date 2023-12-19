@@ -14,4 +14,9 @@ export default defineConfig({
       views: path.resolve(__dirname, 'src', 'views'),
     },
   },
+  css: {
+    modules: {
+      localsConvention: 'dashes',
+    },
+  },
 })
