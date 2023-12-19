@@ -6,7 +6,7 @@ import MovieCard from 'components/MovieCard/MovieCard.tsx'
 import MDBService from 'src/services/moviedbService.ts'
 import LS from 'src/helpers/localStorageHelper.ts'
 
-import type { MoviesListState } from './MoviesList.d'
+import type { MoviesListState, MoviesListProps } from './MoviesList.d'
 import style from './MoviesList.module.scss'
 
 const { debounce } = _
@@ -14,7 +14,7 @@ const { debounce } = _
 const { Provider: MoviesListContextProvider, Consumer: MoviesListContextConsumer } = createContext<any[] | null>(null)
 export { MoviesListContextConsumer }
 
-export default class MoviesList extends Component<any, MoviesListState> {
+export default class MoviesList extends Component<MoviesListProps, MoviesListState> {
   constructor(props: any) {
     super(props)
     this.state = {

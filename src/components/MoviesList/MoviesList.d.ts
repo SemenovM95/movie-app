@@ -1,6 +1,3 @@
-import type { MoviesResponseData } from '../../services/moviedbService'
-import MoviesList from "./MoviesList.tsx";
-
 interface MoviesListState {
   movies: Movie[]
   genres: Genre[]
@@ -17,4 +14,4 @@ interface MoviesListProps {
   guestSessionId: string
 }
 
-export { MoviesListState }
+export { MoviesListState, MoviesListProps }
