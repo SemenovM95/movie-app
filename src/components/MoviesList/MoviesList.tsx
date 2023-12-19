@@ -2,7 +2,7 @@ import { Component, createContext, SyntheticEvent } from 'react'
 import { Input, Tabs, Spin, Pagination, Alert } from 'antd'
 import _ from 'lodash'
 
-import MovieCard from 'components/presentational/MovieCard/MovieCard.tsx'
+import MovieCard from 'components/MovieCard/MovieCard.tsx'
 import MDBService from 'src/services/moviedbService.ts'
 import LS from 'src/helpers/localStorageHelper.ts'
 

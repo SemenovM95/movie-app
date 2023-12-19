@@ -1,6 +1,6 @@
 import { Component } from 'react'
 
-import MoviesList from 'components/presentational/MoviesList/MoviesList.tsx'
+import MoviesList from 'components/MoviesList/MoviesList.tsx'
 import MDBService from 'src/services/moviedbService.ts'
 
 import type { AppState } from './App.d'

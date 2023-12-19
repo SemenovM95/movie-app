@@ -1,5 +1,5 @@
-import type { MoviesResponseData } from 'src/services/moviedbService.d'
-import MoviesList from "components/presentational/MoviesList/MoviesList.tsx";
+import type { MoviesResponseData } from '../../services/moviedbService'
+import MoviesList from "./MoviesList.tsx";
 
 interface MoviesListState {
   movies: Movie[]
