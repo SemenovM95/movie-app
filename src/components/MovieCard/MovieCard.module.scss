@@ -31,6 +31,10 @@
       display: flex;
       flex-wrap: wrap;
     }
+    &-no-data {
+      font-size: 12px;
+      color: #827E7E;
+    }
     &-description {
       overflow: hidden;
       color: #000;
@@ -46,6 +50,37 @@
       right: 8px;
       width: 30px;
       height: 30px;
+    }
+    &-user-rating {
+      margin-top: auto;
+    }
+  }
+}
+
+@media (max-width: 1010px) {
+  .movie-card {
+    display: flex;
+    flex-direction: column;
+    padding: 6px 10px;
+    max-height: 245px;
+    &__image {
+      max-width: 60px;
+      position: absolute;
+    }
+    &__details {
+      padding: 0;
+      margin-left: 72px;
+      height: 100%;
+      &-heading {
+        max-width: 280px;
+      }
+      &-description {
+        margin-left: -72px;
+      }
+      &-user-rating {
+        margin-top: auto;
+        align-self: flex-end;
+      }
     }
   }
 }

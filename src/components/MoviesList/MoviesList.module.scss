@@ -5,8 +5,7 @@
     align-items: center;
     margin: 0 auto;
     padding: 12px 36px;
-    min-width: 1010px;
-    max-width: 1010px;
+    width: 100%;
     min-height: 100vh;
   }
   &-list {
@@ -15,5 +14,16 @@
     gap: 36px;
     padding-top: 36px;
     width: 100%;
+  }
+}
+
+@media (max-width: 1010px) {
+  .movies {
+    &-section {
+      padding: 0 16px 16px 16px;
+    }
+    &-list {
+      padding-top: 10px;
+    }
   }
 }

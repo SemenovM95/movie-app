@@ -40,23 +40,29 @@ export default function MovieCard(props: MovieCardProps) {
               </span>
               {genresData && genresData.length && (
                 <div className={style.movieCard__detailsGenres}>
-                  {genreIds.map((genreId: number) => {
-                    const found = genresData.find((genre) => genre.id === genreId)
-                    return found ? <Tag key={found.id}>{found.name}</Tag> : null
-                  })}
+                  {genreIds.length ? (
+                    genreIds.map((genreId: number) => {
+                      const found = genresData.find((genre) => genre.id === genreId)
+                      return found ? <Tag key={found.id}>{found.name}</Tag> : null
+                    })
+                  ) : (
+                    <p className={style.movieCard__detailsNoData}>No genre data available</p>
+                  )}
                 </div>
               )}
               <p className={style.movieCard__detailsDescription}>
                 {formatText(overview) || 'No description available'}
               </p>
-              <Rate
-                style={{ fontSize: '1.05rem', marginTop: 'auto' }}
-                count={10}
-                defaultValue={userRating || 0}
-                value={userRating}
-                allowHalf
-                onChange={setUserRating}
-              />
+              <div className={style.movieCard__detailsUserRating}>
+                <Rate
+                  style={{ fontSize: '1.05rem' }}
+                  count={10}
+                  defaultValue={userRating || 0}
+                  value={userRating}
+                  allowHalf
+                  onChange={setUserRating}
+                />
+              </div>
             </div>
           </li>
         )

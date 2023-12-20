@@ -142,7 +142,6 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
           defaultCurrent={1}
           current={currPage}
           total={totalItems}
-          showTotal={(total, range) => `${range[0]}-${range[1]} of ${total}`}
           onChange={setPage}
           style={{ marginTop: '36px' }}
           showSizeChanger={false}
