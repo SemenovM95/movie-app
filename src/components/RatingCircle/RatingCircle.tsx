@@ -22,7 +22,7 @@ export default function RatingCircle(props: RatingCircleProps) {
         strokeColor={getRatingColor(voteAverage)}
         strokeLinecap="butt"
         showInfo={false}
-        percent={voteAverage * 10}
+        percent={100}
       />
     </div>
   )

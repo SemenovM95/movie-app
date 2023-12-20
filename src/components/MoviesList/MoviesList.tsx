@@ -115,6 +115,7 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
     const {
       setPage,
       getUserRating,
+      getRated,
       state: { movies, rated, currPage, totalResults, activeTab },
     } = this
     const data = activeTab === 'search' ? movies : rated?.slice((currPage - 1) * 10, currPage * 10)
@@ -132,7 +133,7 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
                 genreIds: movie.genre_ids,
                 userRating: activeTab === 'search' ? getUserRating(movie.id) : movie.userRating,
               }
-              return <MovieCard key={movie.id} movie={movieData} />
+              return <MovieCard key={movie.id} movie={movieData} onUpdateRating={getRated} />
             })
           ) : (
             <p>No movies found</p>
@@ -143,6 +144,7 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
           current={currPage}
           total={totalItems}
           onChange={setPage}
+          pageSize={20}
           style={{ marginTop: '36px' }}
           showSizeChanger={false}
           hideOnSinglePage
@@ -184,7 +186,13 @@ export default class MoviesList extends Component<MoviesListProps, MoviesListSta
             centered
             onChange={(key: string) => setTab(key as 'rated' | 'search')}
           />
-          <Input type="text" size="large" placeholder="Type to search..." onChange={debounce(onUserSearch, 700)} />
+          <Input
+            type="text"
+            size="large"
+            placeholder="Type to search..."
+            onChange={debounce(onUserSearch, 700)}
+            autoFocus
+          />
           {error && renderError(error)}
           {!error && !loading && renderMoviesList()}
           {loading && <Spin size="large" style={{ transform: 'translateY(100%)' }} />}

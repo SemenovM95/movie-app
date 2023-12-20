@@ -13,11 +13,13 @@ import style from './MovieCard.module.scss'
 export default function MovieCard(props: MovieCardProps) {
   const {
     movie: { posterPath, title, overview, releaseDate, genreIds, voteAverage, userRating },
+    onUpdateRating,
   } = props
 
   const setUserRating = (rating: number) => {
     const { movie } = props
     LS.updateToLocalStorage('userRated', { ...movie, userRating: rating })
+    onUpdateRating()
   }
 
   return (

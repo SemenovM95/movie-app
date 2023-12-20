@@ -30,6 +30,7 @@
     &-genres {
       display: flex;
       flex-wrap: wrap;
+      row-gap: 8px;
     }
     &-no-data {
       font-size: 12px;

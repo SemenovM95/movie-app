@@ -11,6 +11,7 @@ interface Movie extends MovieData {
 
 interface MovieCardProps {
   movie: Movie
+  onUpdateRating: () => void
 }
 
 export { MovieCardProps }
